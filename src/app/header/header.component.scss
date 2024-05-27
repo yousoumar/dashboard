@@ -1,0 +1,29 @@
+.header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 1rem;
+  box-shadow: 0 4px 8px -2px rgba(96, 96, 96, 0.15),
+    0 0 1px 0 rgba(96, 96, 96, 0.31);
+
+  .header-title {
+    text-align: center;
+    h1 {
+      font-size: 1.4rem;
+    }
+  }
+
+  img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-left: -0.9rem;
+  }
+  .time {
+    font-weight: bold;
+
+    &.pause-time {
+      color: #2f0000;
+    }
+  }
+}

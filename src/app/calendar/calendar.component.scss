@@ -1,0 +1,59 @@
+.calendar {
+  padding: 1rem;
+  min-height: 100%;
+  margin-block: 1rem;
+}
+
+.calendar-title {
+  margin-bottom: 1rem;
+}
+
+.calendar-header,
+.calendar-body {
+  display: grid;
+  gap: 1rem;
+  margin: 1rem 0;
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+.calendar-header-day {
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: #ced4da;
+
+  &.current {
+    background-color: #212529;
+    color: white;
+  }
+}
+
+.calendar-body {
+  .day {
+    display: grid;
+    gap: 1rem;
+    height: min-content;
+  }
+  .event {
+    box-shadow: 0 4px 8px -2px rgba(96, 96, 96, 0.15),
+      0 0 1px 0 rgba(96, 96, 96, 0.31);
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    &.exam {
+      background-color: #2f0000;
+      color: white;
+    }
+
+    .title {
+      font-weight: bold;
+    }
+  }
+  .hour {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+}

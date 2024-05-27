@@ -1,0 +1,14 @@
+<section class="menu">
+  <h2 class="calendar-title">Aujourd'hui à la cantine</h2>
+  <div class="container">
+    <div class="item" *ngFor="let item of menu; let i = index">
+      <div class="item-title">
+        <img width="40" height="40" src="{{ item.img }}" alt="steak-rare" />
+        {{ item.counter }}
+      </div>
+      <ul>
+        <li *ngFor="let food of item.items; let i = index">{{ food }}</li>
+      </ul>
+    </div>
+  </div>
+</section>

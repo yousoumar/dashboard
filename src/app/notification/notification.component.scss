@@ -1,0 +1,30 @@
+.notification {
+  background-color: #2f0000;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+
+  .buttons {
+    display: flex;
+    gap: 1rem;
+
+    button {
+      background-color: white;
+      border-radius: 0.5rem;
+      border: 2px solid white;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: 0.5s;
+      font-weight: bold;
+
+      &:hover {
+        background-color: transparent;
+        color: white;
+      }
+    }
+  }
+}
