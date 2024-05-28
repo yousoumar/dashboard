@@ -13,8 +13,12 @@ export class HeaderComponent implements OnInit {
   pauseTime: boolean = false;
   isRedHour: boolean = false;
   specificTimes: Array<{ hours: number, minutes: number, seconds: number }> = [
-    { hours: 8, minutes: 5, seconds: 0 },
-    { hours: 13, minutes: 50, seconds: 0 }
+    { hours: 9, minutes: 15, seconds: 0 },
+    { hours: 10, minutes: 45, seconds: 0 },
+    { hours: 12, minutes: 15, seconds: 0 },
+    { hours: 15, minutes: 0, seconds: 0 },
+    { hours: 16, minutes: 30, seconds: 0 }
+
   ];
   redStates: Array<{ endTime: Date }> = [];
   audio = new Audio('../../assets/alert.mp3');
