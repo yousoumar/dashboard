@@ -12,7 +12,7 @@ import timeGridPlugin from '@fullcalendar/timegrid';
 })
 export class CalendarComponent implements OnInit {
   ngOnInit(): void {
-    const calendarEl = document.getElementById('calendar-content')!;
+    const calendarEl = document.getElementById('calendar')!;
     const calendar = new Calendar(calendarEl, {
       plugins: [timeGridPlugin, iCalendarPlugin],
       initialView: 'timeGridWeek',

@@ -6,7 +6,6 @@ import { CalendarComponent } from './calendar/calendar.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { NotificationComponent } from './notification/notification.component';
-import { StudentsComponent } from './students/students.component';
 
 @Component({
   selector: 'app-root',
@@ -16,7 +15,6 @@ import { StudentsComponent } from './students/students.component';
     RouterOutlet,
     NotificationComponent,
     CalendarComponent,
-    StudentsComponent,
     HeaderComponent,
     MenuComponent,
   ],
