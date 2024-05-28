@@ -25,8 +25,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build NestJS backend
-        run: pnpm run build:backend
+      - name: Build the backend
+        run: pnpm --filter backend run build
 
-      - name: Build Angular frontend
-        run: pnpm run build:frontend
+      - name: Build the frontend
+        run: pnpm  --filter frontend run build
