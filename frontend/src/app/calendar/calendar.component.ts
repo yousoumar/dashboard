@@ -19,6 +19,8 @@ export class CalendarComponent implements OnInit {
       views: {
         timeGridWeek: {
           allDaySlot: false,
+          type: 'timeGrid',
+          duration: { days: 3 },
         },
       },
       headerToolbar: {
