@@ -21,6 +21,20 @@ export class CalendarComponent implements OnInit {
           allDaySlot: false,
           type: 'timeGrid',
           duration: { days: 3 },
+
+          dayHeaderContent: (args) => {
+            if (args.date.getDay() === new Date().getDay()) {
+              return "Aujourd'hui";
+            }
+
+            return args.date
+              .toLocaleDateString('fr-fr', {
+                weekday: 'long',
+                month: 'long',
+                day: 'numeric',
+              })
+              .replace(/^\w/, (c) => c.toUpperCase());
+          },
         },
       },
       headerToolbar: {
