@@ -21,7 +21,6 @@ export class CalendarComponent implements OnInit {
           allDaySlot: false,
           type: 'timeGrid',
           duration: { days: 3 },
-          buttonText: '3 day'
         },
       },
       headerToolbar: {
