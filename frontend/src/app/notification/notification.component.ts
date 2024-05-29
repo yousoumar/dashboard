@@ -12,16 +12,17 @@ export class NotificationComponent implements OnInit {
   absentStudents: string = '';
 
   checkAbsentStudents() {
+    let absentStudents: string = '';
     fetch('/assets/alumeneo.json')
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         data[0].absentStudents.forEach((student: any) => {
-          this.absentStudents += student.firstName + ', ';
-          setTimeout(() => {
-            this.absentStudents = '';
-          }, 5000);
+          absentStudents += student.firstName + ', ';
+          if (absentStudents !== this.absentStudents) {
+            this.absentStudents = absentStudents;
+          }
         });
       });
   }
@@ -32,9 +33,11 @@ export class NotificationComponent implements OnInit {
       const hours = now.getHours();
       const minutes = now.getMinutes();
 
-      if ((hours === 8 && minutes === 5) || (hours === 13 && minutes === 0)) {
+      if ((hours === 8 && minutes === 5) || (hours === 13 && minutes === 50)) {
         this.checkAbsentStudents();
+      } else {
+        this.absentStudents = '';
       }
-    }, 60000);
+    }, 1000);
   }
 }
