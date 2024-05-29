@@ -10,20 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   time: string | undefined;
-  pauseTime: boolean = false;
   isRedHour: boolean = false;
-  specificTimes: Array<{ hours: number, minutes: number, seconds: number }> = [
+  specificTimes: Array<{ hours: number; minutes: number; seconds: number }> = [
     { hours: 9, minutes: 15, seconds: 0 },
     { hours: 10, minutes: 45, seconds: 0 },
     { hours: 12, minutes: 15, seconds: 0 },
     { hours: 15, minutes: 0, seconds: 0 },
-    { hours: 16, minutes: 30, seconds: 0 }
-
+    { hours: 16, minutes: 30, seconds: 0 },
   ];
   redStates: Array<{ endTime: Date }> = [];
   audio = new Audio('../../assets/alert.mp3');
-
-
 
   ngOnInit(): void {
     setInterval(() => {
@@ -43,8 +39,12 @@ export class HeaderComponent implements OnInit {
       hours + 'h :' + paddedMinutes + 'm' + ' :' + paddedSeconds + 's';
 
     // Check if the current time matches any specific time
-    this.specificTimes.forEach(time => {
-      if (hours === time.hours && minutes === time.minutes && seconds === time.seconds) {
+    this.specificTimes.forEach((time) => {
+      if (
+        hours === time.hours &&
+        minutes === time.minutes &&
+        seconds === time.seconds
+      ) {
         console.log('sound');
         this.playSound().then(() => console.log('sound played'));
         this.setRedState();
@@ -52,7 +52,9 @@ export class HeaderComponent implements OnInit {
     });
 
     // Check if the current time is within any red state period
-    this.isRedHour = this.redStates.some(redState => date <= redState.endTime);
+    this.isRedHour = this.redStates.some(
+      (redState) => date <= redState.endTime,
+    );
 
     if (this.isRedHour) {
       console.log('Red state active');

@@ -1,0 +1,160 @@
+[
+  {
+    "startTime": "2024-05-27T00:00:00",
+    "endTime": "2024-05-27T11:59:59",
+    "presentStudents": [
+      {
+        "lastName": "ACAMER",
+        "firstName": "Guillaume",
+        "dateTime": "2024-05-27T08:05:42"
+      },
+      {
+        "lastName": "ACHEK",
+        "firstName": "Jamil",
+        "dateTime": "2024-05-27T07:53:25"
+      },
+      {
+        "lastName": "ALAOUI",
+        "firstName": "Anas",
+        "dateTime": "2024-05-27T08:03:57"
+      },
+      {
+        "lastName": "BLEUET",
+        "firstName": "Matthis",
+        "dateTime": "2024-05-27T07:52:09"
+      },
+      {
+        "lastName": "CHALEKH",
+        "firstName": "Zineddine",
+        "dateTime": "2024-05-27T08:05:41"
+      },
+      {
+        "lastName": "COCHERIL",
+        "firstName": "Titouan",
+        "dateTime": "2024-05-27T08:01:20"
+      },
+      {
+        "lastName": "EGENSCHEVILLER",
+        "firstName": "Frédéric",
+        "dateTime": "2024-05-27T07:59:01"
+      },
+      {
+        "lastName": "EZZEMANY",
+        "firstName": "Soufiane",
+        "dateTime": "2024-05-27T08:20:51"
+      },
+      {
+        "lastName": "FERRETTI",
+        "firstName": "Lilian",
+        "dateTime": "2024-05-27T07:58:52"
+      },
+      {
+        "lastName": "GALIOT",
+        "firstName": "Clément",
+        "dateTime": "2024-05-27T07:53:37"
+      },
+      {
+        "lastName": "GUILLOUET",
+        "firstName": "Adam",
+        "dateTime": "2024-05-27T07:59:23"
+      },
+      {
+        "lastName": "JOLY-JEHENNE",
+        "firstName": "Léo",
+        "dateTime": "2024-05-27T08:05:15"
+      },
+      {
+        "lastName": "KITSOUKOU",
+        "firstName": "Manne Emile",
+        "dateTime": "2024-05-27T08:17:35"
+      },
+      {
+        "lastName": "LABORDE",
+        "firstName": "Baptiste",
+        "dateTime": "2024-05-27T08:00:41"
+      },
+      {
+        "lastName": "LE BRAS",
+        "firstName": "Grégoire",
+        "dateTime": "2024-05-27T07:53:30"
+      },
+      {
+        "lastName": "LE GOFF",
+        "firstName": "Quentin",
+        "dateTime": "2024-05-27T07:45:09"
+      },
+      {
+        "lastName": "MILLION",
+        "firstName": "Julien",
+        "dateTime": "2024-05-27T07:59:58"
+      },
+      {
+        "lastName": "MORIO",
+        "firstName": "Elias",
+        "dateTime": "2024-05-27T08:00:26"
+      },
+      {
+        "lastName": "OTEGUI",
+        "firstName": "Antoine",
+        "dateTime": "2024-05-27T08:03:48"
+      },
+      {
+        "lastName": "OUMAR",
+        "firstName": "Youssouf",
+        "dateTime": "2024-05-27T08:15:19"
+      },
+      {
+        "lastName": "OURAQ",
+        "firstName": "Aymane",
+        "dateTime": "2024-05-27T08:05:45"
+      },
+      {
+        "lastName": "PAINTER",
+        "firstName": "Louis",
+        "dateTime": "2024-05-27T08:07:59"
+      },
+      {
+        "lastName": "REPEL",
+        "firstName": "Clément",
+        "dateTime": "2024-05-27T07:48:05"
+      },
+      {
+        "lastName": "SAILLY",
+        "firstName": "Ruben",
+        "dateTime": "2024-05-27T07:57:30"
+      },
+      {
+        "lastName": "SAYAD",
+        "firstName": "Youcef",
+        "dateTime": "2024-05-27T07:54:47"
+      },
+      {
+        "lastName": "ZEBIAN",
+        "firstName": "Jana",
+        "dateTime": "2024-05-27T07:53:03"
+      },
+      {
+        "lastName": "FRERET",
+        "firstName": "Tom",
+        "dateTime": "2024-05-27T08:02:43"
+      }
+    ],
+    "absentStudents": [
+      {
+        "lastName": "FOUERE",
+        "firstName": "Nathan",
+        "dateTime": null
+      },
+      {
+        "lastName": "HAUDEGOND",
+        "firstName": "Alyzée",
+        "dateTime": null
+      },
+      {
+        "lastName": "ROUGETET-DE TROYANE",
+        "firstName": "Vitalys",
+        "dateTime": null
+      }
+    ]
+  }
+]
