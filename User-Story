@@ -1,0 +1,19 @@
+Break Notification: (label:notification)
+As an engineering student,
+I want the dashboard to notify me with both sound and a visual alert when it's time for a break,
+So that I can effectively manage my study time and ensure I take necessary breaks.
+
+Calendar Display: (label:calendar)
+As an engineering student,
+I want the dashboard to show my class schedule for both the current and the next day,
+So that I can prepare for my classes in advance and manage my day efficiently.
+
+Daily Menu Display: (label:menu)
+As an engineering student,
+I want the dashboard to display the daily cafeteria menu,
+So that I can decide whether to eat at the cafeteria or make other arrangements.
+
+Student Card Scan Notification: (label:card)
+As an administrator,
+I want the dashboard to notify students who forget to scan their student cards in the morning and in the afternoon,
+So that students are reminded to check in, ensuring their presence is recorded for administrative purposes.
