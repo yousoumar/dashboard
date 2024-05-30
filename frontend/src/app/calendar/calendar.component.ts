@@ -46,7 +46,7 @@ export class CalendarComponent implements OnInit {
         url: 'http://localhost:3000/calendar',
         format: 'ics',
       },
-      hiddenDays: [0, 6],
+
       slotMinTime: '08:00:00',
       slotMaxTime: '19:00:00',
       height: 'auto',
