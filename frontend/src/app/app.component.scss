@@ -1,4 +1,7 @@
-.calendar-menu {
+.kpis-menu {
+  margin-top: 1.5rem;
   display: grid;
-  grid-template-columns: 1fr 25rem;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding-inline: 1rem;
 }

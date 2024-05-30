@@ -11,17 +11,22 @@ import { Component } from '@angular/core';
 export class MenuComponent {
   menu = [
     {
-      counter: 'Cibo',
+      counter: 'Grillades',
       items: ['Poisson braisé', 'Salade de pâtes'],
       img: 'https://img.icons8.com/ios-glyphs/90/chicken.png',
     },
     {
-      counter: 'Cuistots migrateurs',
+      counter: 'Les cuistos migrateurs',
       items: ['Poêlée de légumes', 'Lentilles'],
       img: 'https://img.icons8.com/ios-glyphs/90/vegan-food.png',
     },
     {
-      counter: 'Traditionnels',
+      counter: 'Végétarien',
+      items: ['Steak haché', 'Frites'],
+      img: 'https://img.icons8.com/ios-glyphs/90/steak.png',
+    },
+    {
+      counter: 'Accompagnements',
       items: ['Steak haché', 'Frites'],
       img: 'https://img.icons8.com/ios-glyphs/90/steak.png',
     },
