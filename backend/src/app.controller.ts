@@ -14,4 +14,9 @@ export class AppController {
   getCalendar(): Promise<string> {
     return this.appService.getCalendar();
   }
+
+  @Get('menu')
+  getMenu(): Promise<string> {
+    return this.appService.getMenu();
+  }
 }

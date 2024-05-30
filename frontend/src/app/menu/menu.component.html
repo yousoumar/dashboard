@@ -1,15 +1,15 @@
 <section class="menu">
   <div class="container">
-    <div class="item" *ngFor="let item of menu; let i = index">
+    <div class="item" *ngFor="let pole of menu | keyvalue">
       <div class="icon">
-        <img width="40" height="40" src="{{ item.img }}" alt="steak-rare" />
+        <!-- <img width="40" height="40" src="{{ item.img }}" alt="steak-rare" /> -->
       </div>
       <div class="item-content">
         <div class="item-title">
-          {{ item.counter }}
+          {{ pole.key }}
         </div>
         <ul>
-          <li *ngFor="let food of item.items; let i = index">{{ food }}</li>
+          <!-- <li *ngFor="let item of pole.value">{{ item }}</li> -->
         </ul>
       </div>
     </div>
