@@ -14,35 +14,41 @@ export class AppService {
       .then((response) => response.text())
       .catch((error) => {
         console.error('Error fetching ICS data:', error);
-        return 'Failed to fetch ICS data'
+        return 'Failed to fetch ICS data';
       });
   }
 
   getMenu(): Promise<any> {
-    return fetch("https://toast-js.ew.r.appspot.com/coteresto?key=1ohdRUdCYo6e71aLuBh7ZfF2lc_uZqp9D78icU4DPufA").then((response) => {
-      
-      return response.text();
-    }).then((data) => {
+    return fetch(
+      'https://toast-js.ew.r.appspot.com/coteresto?key=1ohdRUdCYo6e71aLuBh7ZfF2lc_uZqp9D78icU4DPufA',
+    )
+      .then((response) => {
+        return response.text();
+      })
+      .then((data) => {
+        const regex = /var loadingData = (\[.*?\])/;
 
-      const regex = /var loadingData = (\[.*?\])/;
+        const match = data.match(regex);
 
-      // Matching the data against the regex
-      const match = data.match(regex);
-   
+        let loadingData = match ? match[1] : 'Valeur non trouvée';
 
-      // Using the ternary operator to handle cases where the match may be null
-      let loadingData = match ? match[1] : 'Valeur non trouvée';
-      // remove first character from loadingData
-      loadingData = loadingData.substring(1);
-      console.log("loading",loadingData);
-      // console.log("loading",match[1][0], match[1][1],match[1][match[1].length-1], match[1][match[1].length-2], );
+        // remove first character from loadingData
+        loadingData = loadingData.substring(1);
 
-      const json = JSON.parse(loadingData);
-      return json
-     
-    }).catch((error) => {
-      console.error('Error fetching menu data:', error);
-      return 'Failed to fetch menu data'
-    } );
+        const json = JSON.parse(loadingData);
+        return json;
+      })
+      .catch((error) => {
+        console.error('Error fetching menu data:', error);
+        return 'Failed to fetch menu data';
+      });
+  }
+
+  getWeather(): Promise<number> {
+    return fetch(
+      'https://api.openweathermap.org/data/2.5/onecall?lang=fr&units=metric&lat=47.1667&lon=-1.5833&appid=50021d7620cf40fe0d17ecde68cfceeb',
+    )
+      .then((response) => response.json())
+      .then((data) => data.current.temp);
   }
 }

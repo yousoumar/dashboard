@@ -12,6 +12,7 @@ export class KpisComponent implements OnInit {
   allStudentNumber: number = 0;
   intervalId: number | null = null;
   isMorning: boolean = new Date().getHours() < 12;
+  temp: number = 0;
 
   fetchStudents() {
     fetch('/assets/alumeneo.json')
@@ -27,6 +28,15 @@ export class KpisComponent implements OnInit {
         if (this.absentStudentNumer < 10) {
           this.absentStudentNumer = `0${this.absentStudentNumer}`;
         }
+      });
+  }
+
+  fetchWeather() {
+    fetch('http://localhost:3000/weather')
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('data', data);
+        this.temp = data;
       });
   }
 
@@ -71,9 +81,10 @@ export class KpisComponent implements OnInit {
         (now >= startTime2 && now <= endTime2)
       ) {
         this.fetchStudents();
+        this.fetchWeather();
       }
     }, 1000);
-
+    this.fetchWeather();
     this.fetchStudents();
   }
 
