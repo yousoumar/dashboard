@@ -1,8 +1,15 @@
 .menu {
-  .container {
-    display: grid;
-    gap: 2rem;
-    grid-template-columns: repeat(2, 1fr);
+  border: 1px solid rgba(96, 96, 96, 0.15);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  position: relative;
+
+  > img {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -2.5rem;
+    left: 1rem;
   }
 
   .item-title {
@@ -14,21 +21,23 @@
     place-items: center;
     border: 1px solid rgba(96, 96, 96, 0.15);
     border-radius: 50%;
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
+    flex-shrink: 0;
   }
 
-  svg {
-    width: 1.5rem;
-    height: 1.5rem;
-  }
   .item {
-    padding-bottom: 1rem;
-    border: 1px solid rgba(96, 96, 96, 0.15);
-    padding: 1rem;
-    border-radius: 0.5rem;
     display: flex;
     gap: 1rem;
+
+    &:not(:last-child) {
+      padding-block: 1rem;
+      border-bottom: 1px solid rgba(96, 96, 96, 0.15);
+    }
+
+    &:last-child {
+      padding-top: 1rem;
+    }
   }
 
   ul {

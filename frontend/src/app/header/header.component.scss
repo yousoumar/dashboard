@@ -3,20 +3,12 @@
   justify-content: space-between;
   align-items: center;
   padding-inline: 1rem;
+  padding-block: 0.5rem;
   border-bottom: 1px solid rgba(96, 96, 96, 0.15);
 
-  .header-title {
-    text-align: center;
-    h1 {
-      font-size: 1.4rem;
-    }
-  }
-
-  img {
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    margin-left: -0.9rem;
+  .logo {
+    font-weight: bold;
+    font-size: 2rem;
   }
 
   .time {

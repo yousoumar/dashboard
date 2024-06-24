@@ -1,35 +1,51 @@
 .kpis {
-  display: grid;
-  gap: 2rem;
-  height: 100%;
+  border: 1px solid rgba(96, 96, 96, 0.15);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  position: relative;
+
+  > img {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: -2.5rem;
+    left: 1rem;
+  }
 
   .kpi {
     display: grid;
     place-items: center;
-    border: 1px solid rgba(96, 96, 96, 0.15);
-    padding: 1rem;
-    border-radius: 0.5rem;
     display: flex;
     align-items: center;
     gap: 1rem;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid rgba(96, 96, 96, 0.15);
+      padding-bottom: 1rem;
+    }
+
+    &:last-child {
+      padding-top: 1rem;
+    }
 
     .icon {
       display: grid;
       place-items: center;
       border: 1px solid rgba(96, 96, 96, 0.15);
       border-radius: 50%;
-      width: 4rem;
-      height: 4rem;
+      width: 3rem;
+      height: 3rem;
     }
 
     .content {
-      display: grid;
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
     }
 
-    svg {
-      width: 3rem;
-      height: 3rem;
-      color: #172554;
+    img {
+      width: 2rem;
+      height: 2rem;
     }
 
     .value {
