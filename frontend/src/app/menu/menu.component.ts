@@ -1,6 +1,5 @@
 import { KeyValuePipe, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { count } from 'rxjs';
 
 @Component({
   selector: 'app-menu',
@@ -9,26 +8,22 @@ import { count } from 'rxjs';
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.scss',
 })
-export class MenuComponent implements OnInit{
-  menu :any= {};
+export class MenuComponent implements OnInit {
+  menu: any = {};
   ngOnInit(): void {
-    fetch("http://localhost:3000/menu").then((response) => {
-      return response.json();
-    }).then((data) => {
-     data.forEach((item:any) => {
-      if(this.menu[item.pole]){
-        this.menu[item.pole].push(item.nom);
-
-      }else{
-        this.menu[item.pole] = [item.nom]
-
-      }
-    }
-    )
-    console.log(this.menu);
-
-
-    })
+    fetch('http://localhost:3000/menu')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        data.forEach((item: any) => {
+          if (this.menu[item.pole]) {
+            this.menu[item.pole] += ', ' + item.nom;
+          } else {
+            this.menu[item.pole] = item.nom;
+          }
+        });
+      });
   }
   // menu = [
   //   {
