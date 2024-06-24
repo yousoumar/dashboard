@@ -6,6 +6,18 @@
   padding-block: 0.5rem;
   border-bottom: 1px solid rgba(96, 96, 96, 0.15);
 
+  .break {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 1000;
+    display: grid;
+    place-items: center;
+  }
+
   .logo {
     font-weight: bold;
     font-size: 2rem;
