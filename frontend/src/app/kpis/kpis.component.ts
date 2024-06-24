@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class KpisComponent implements OnInit {
   constructor() {}
-  presentStudentNumber: number = 0;
+  absentStudentNumer: number | string = 0;
   allStudentNumber: number = 0;
   intervalId: number | null = null;
   isMorning: boolean = new Date().getHours() < 12;
@@ -19,9 +19,14 @@ export class KpisComponent implements OnInit {
         return response.json();
       })
       .then((data) => {
-        this.presentStudentNumber = data[0].presentStudents.length;
         this.allStudentNumber =
           data[0].presentStudents.length + data[0].absentStudents.length;
+
+        this.absentStudentNumer =
+          this.allStudentNumber - data[0].presentStudents.length;
+        if (this.absentStudentNumer < 10) {
+          this.absentStudentNumer = `0${this.absentStudentNumer}`;
+        }
       });
   }
 
