@@ -1,7 +1,10 @@
 <header class="header">
   <div class="logo">Dashboard</div>
 
-  <div class="time" [ngClass]="{ 'red-hour': isRedHour }">
+  <div class="time">
     {{ time }}
+  </div>
+  <div class="break" *ngIf="isBreakTime">
+    <img src="/assets/break.gif" alt="" />
   </div>
 </header>
