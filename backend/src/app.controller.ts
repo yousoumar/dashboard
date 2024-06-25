@@ -19,4 +19,9 @@ export class AppController {
   getMenu(): Promise<string> {
     return this.appService.getMenu();
   }
+
+  @Get('weather')
+  getWeather(): Promise<number> {
+    return this.appService.getWeather();
+  }
 }
