@@ -49,6 +49,6 @@ export class AppService {
       'https://api.openweathermap.org/data/2.5/onecall?lang=fr&units=metric&lat=47.1667&lon=-1.5833&appid=50021d7620cf40fe0d17ecde68cfceeb',
     )
       .then((response) => response.json())
-      .then((data) => data.current.temp);
+      .then((data) => Math.round(data.current.temp));
   }
 }
