@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar.component';
 
@@ -23,6 +23,11 @@ import { NotificationComponent } from './notification/notification.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    document.body.addEventListener('click', () => {
+      document.documentElement.requestFullscreen();
+    });
+  }
   title = 'fil-dashboard';
 }
