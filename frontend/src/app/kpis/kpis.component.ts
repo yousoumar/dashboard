@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 type BusSchedule = {
   sens: number;
@@ -57,7 +58,7 @@ export class KpisComponent implements OnInit {
   }
 
   fetchWeather() {
-    fetch('http://localhost:3000/weather')
+    fetch(environment.apiUrl + 'weather')
       .then((response) => response.json())
       .then((data) => {
         console.log('data', data);

@@ -1,5 +1,6 @@
 import { KeyValuePipe, NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment.development';
 
 @Component({
   selector: 'app-menu',
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
   menu: any = {};
   ngOnInit(): void {
-    fetch('http://localhost:3000/menu')
+    fetch(environment.apiUrl + '/menu')
       .then((response) => {
         return response.json();
       })
@@ -25,26 +26,4 @@ export class MenuComponent implements OnInit {
         });
       });
   }
-  // menu = [
-  //   {
-  //     counter: 'Grillades',
-  //     items: ['Poisson braisé', 'Salade de pâtes'],
-  //     img: 'https://img.icons8.com/ios-glyphs/90/chicken.png',
-  //   },
-  //   {
-  //     counter: 'Les cuistos migrateurs',
-  //     items: ['Poêlée de légumes', 'Lentilles'],
-  //     img: 'https://img.icons8.com/ios-glyphs/90/vegan-food.png',
-  //   },
-  //   {
-  //     counter: 'Végétarien',
-  //     items: ['Steak haché', 'Frites'],
-  //     img: 'https://img.icons8.com/ios-glyphs/90/steak.png',
-  //   },
-  //   {
-  //     counter: 'Accompagnements',
-  //     items: ['Steak haché', 'Frites'],
-  //     img: 'https://img.icons8.com/ios-glyphs/90/steak.png',
-  //   },
-  // ];
 }
