@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Calendar } from '@fullcalendar/core';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import timeGridPlugin from '@fullcalendar/timegrid';
+import { environment } from '../../environments/environment.development';
 @Component({
   selector: 'app-calendar',
   standalone: true,
@@ -43,7 +44,7 @@ export class CalendarComponent implements OnInit {
         right: '',
       },
       events: {
-        url: 'http://localhost:3000/calendar',
+        url: environment.apiUrl + '/calendar',
         format: 'ics',
       },
 
