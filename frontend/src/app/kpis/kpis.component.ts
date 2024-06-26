@@ -58,7 +58,7 @@ export class KpisComponent implements OnInit {
   }
 
   fetchWeather() {
-    fetch(environment.apiUrl + 'weather')
+    fetch(environment.apiUrl + '/weather')
       .then((response) => response.json())
       .then((data) => {
         console.log('data', data);
