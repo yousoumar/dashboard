@@ -1,5 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
+type BusSchedule = {
+  sens: number;
+  terminus: string;
+  infotrafic: boolean;
+  temps: number | string;
+  dernierDepart: boolean;
+  tempsReel: string;
+  ligne: {
+    numLigne: string;
+    typeLigne: number;
+  };
+  arret: {
+    codeArret: string;
+  };
+};
+
 @Component({
   selector: 'app-kpis',
   standalone: true,
@@ -11,9 +27,21 @@ export class KpisComponent implements OnInit {
   absentStudentNumer: number | string = 0;
   allStudentNumber: number = 0;
   intervalId: number | null = null;
+  c6BusIntervalId: number | null = null;
   isMorning: boolean = new Date().getHours() < 12;
   temp: number = 0;
+  c6busSchedule: BusSchedule | null = null;
 
+  async fetchC6BusSchedule() {
+    return fetch('https://open.tan.fr/ewp/tempsattentelieu.json/CTRE/1/C6')
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        this.c6busSchedule = data.find((bus: BusSchedule) => bus.sens === 2);
+        console.log('c6busSchedule', this.c6busSchedule);
+      });
+  }
   fetchStudents() {
     fetch('/assets/alumeneo.json')
       .then((response) => {
@@ -25,9 +53,6 @@ export class KpisComponent implements OnInit {
 
         this.absentStudentNumer =
           this.allStudentNumber - data[0].presentStudents.length;
-        if (this.absentStudentNumer < 10) {
-          this.absentStudentNumer = `0${this.absentStudentNumer}`;
-        }
       });
   }
 
@@ -40,7 +65,7 @@ export class KpisComponent implements OnInit {
       });
   }
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     const now = new Date();
     const startTime1 = new Date(
       now.getFullYear(),
@@ -86,11 +111,25 @@ export class KpisComponent implements OnInit {
     }, 1000);
     this.fetchWeather();
     this.fetchStudents();
+
+    await this.fetchC6BusSchedule();
+
+    this.c6BusIntervalId = setInterval(() => {
+      if (Number(this.c6busSchedule!.temps) > 0) {
+        this.c6busSchedule!.temps = Number(this.c6busSchedule!.temps) - 1;
+      } else {
+        this.fetchC6BusSchedule();
+      }
+    }, 60000);
   }
 
   ngOnDestroy() {
     if (this.intervalId) {
       clearInterval(this.intervalId);
+    }
+
+    if (this.c6BusIntervalId) {
+      clearInterval(this.c6BusIntervalId);
     }
   }
 }

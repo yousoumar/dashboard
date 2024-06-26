@@ -11,7 +11,7 @@
     <div class="content">
       <span class="value">{{ absentStudentNumer }}</span>
       <span class="label"
-        >étudiants sur {{ allStudentNumber + " " }} absent(s) ce
+        >étudiant(s) sur {{ allStudentNumber + " " }} absent(s) ce
         {{ isMorning ? "matin" : "soir" }}</span
       >
     </div>
@@ -25,9 +25,25 @@
       />
     </div>
     <div class="content">
-      <span class="value">{{ temp }}</span>
+      <span class="value">{{ temp }}°</span>
       <span class="label"
-        >dégré sur Nantes ce {{ isMorning ? "matin" : "soir" }}</span
+        >sur Nantes ce {{ isMorning ? "matin" : "soir" }}</span
+      >
+    </div>
+  </div>
+  <div class="kpi">
+    <div class="icon">
+      <img
+        src="https://img.icons8.com/?size=100&id=KXKIFxpA3E9g&format=png&color=000000"
+        alt=""
+      />
+    </div>
+    <div class="content">
+      <span class="value">{{
+        c6busSchedule?.temps == "proche" ? "0mn" : c6busSchedule?.temps
+      }}</span>
+      <span class="label"
+        >avant le prochain passage du <strong>C6</strong></span
       >
     </div>
   </div>
