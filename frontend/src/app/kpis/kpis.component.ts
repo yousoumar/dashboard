@@ -5,7 +5,7 @@ type BusSchedule = {
   sens: number;
   terminus: string;
   infotrafic: boolean;
-  temps: number | string;
+  temps: string;
   dernierDepart: boolean;
   tempsReel: string;
   ligne: {
@@ -40,7 +40,6 @@ export class KpisComponent implements OnInit {
       })
       .then((data) => {
         this.c6busSchedule = data.find((bus: BusSchedule) => bus.sens === 2);
-        console.log('c6busSchedule', this.c6busSchedule);
       });
   }
   fetchStudents() {
@@ -61,7 +60,6 @@ export class KpisComponent implements OnInit {
     fetch(environment.apiUrl + '/weather')
       .then((response) => response.json())
       .then((data) => {
-        console.log('data', data);
         this.temp = data;
       });
   }
@@ -116,8 +114,14 @@ export class KpisComponent implements OnInit {
     await this.fetchC6BusSchedule();
 
     this.c6BusIntervalId = setInterval(() => {
-      if (Number(this.c6busSchedule!.temps) > 0) {
-        this.c6busSchedule!.temps = Number(this.c6busSchedule!.temps) - 1;
+      if (this.c6busSchedule!.temps == 'proche') {
+        this.c6busSchedule!.temps = 0 + 'mn';
+      }
+
+      let temps = this.c6busSchedule!.temps.slice(0, -2);
+
+      if (Number(temps) > 0) {
+        this.c6busSchedule!.temps = Number(temps) - 1 + 'mn';
       } else {
         this.fetchC6BusSchedule();
       }
