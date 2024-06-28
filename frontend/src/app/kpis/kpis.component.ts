@@ -1,3 +1,4 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { environment } from '../../environments/environment';
 
@@ -22,6 +23,7 @@ type BusSchedule = {
   standalone: true,
   templateUrl: './kpis.component.html',
   styleUrl: './kpis.component.scss',
+  imports: [NgIf],
 })
 export class KpisComponent implements OnInit {
   constructor() {}
@@ -30,8 +32,10 @@ export class KpisComponent implements OnInit {
   intervalId: number | null = null;
   c6BusIntervalId: number | null = null;
   isMorning: boolean = new Date().getHours() < 12;
-  temp: number = 0;
+  temperature: number = 0;
+  fetchingTemperature: boolean = true;
   c6busSchedule: BusSchedule | null = null;
+  fetchingC6BusSchedule: boolean = true;
 
   async fetchC6BusSchedule() {
     return fetch('https://open.tan.fr/ewp/tempsattentelieu.json/CTRE/1/C6')
@@ -40,6 +44,7 @@ export class KpisComponent implements OnInit {
       })
       .then((data) => {
         this.c6busSchedule = data.find((bus: BusSchedule) => bus.sens === 2);
+        this.fetchingC6BusSchedule = false;
       });
   }
   fetchStudents() {
@@ -50,7 +55,6 @@ export class KpisComponent implements OnInit {
       .then((data) => {
         this.allStudentNumber =
           data[0].presentStudents.length + data[0].absentStudents.length;
-
         this.absentStudentNumer =
           this.allStudentNumber - data[0].presentStudents.length;
       });
@@ -60,7 +64,8 @@ export class KpisComponent implements OnInit {
     fetch(environment.apiUrl + '/weather')
       .then((response) => response.json())
       .then((data) => {
-        this.temp = data;
+        this.temperature = data;
+        this.fetchingTemperature = false;
       });
   }
 

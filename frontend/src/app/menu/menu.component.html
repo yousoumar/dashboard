@@ -1,6 +1,6 @@
 <section class="menu">
   <img src="assets/burger.png" alt="" />
-  <div class="container">
+  <div class="container" *ngIf="!fetchingMenu">
     <div class="item" *ngFor="let pole of menu | keyvalue">
       <div class="icon">
         <img
@@ -18,4 +18,5 @@
       </div>
     </div>
   </div>
+  <div class="container" *ngIf="fetchingMenu">Chargement...</div>
 </section>

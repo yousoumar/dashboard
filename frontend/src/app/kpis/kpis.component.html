@@ -24,11 +24,14 @@
         alt=""
       />
     </div>
-    <div class="content">
-      <span class="value">{{ temp }}°</span>
+    <div class="content" *ngIf="!fetchingTemperature">
+      <span class="value">{{ temperature }}°</span>
       <span class="label"
         >sur Nantes ce {{ isMorning ? "matin" : "soir" }}</span
       >
+    </div>
+    <div class="content" *ngIf="fetchingTemperature">
+      <span class="label">Chargement...</span>
     </div>
   </div>
   <div class="kpi">
@@ -38,11 +41,14 @@
         alt=""
       />
     </div>
-    <div class="content">
+    <div class="content" *ngIf="!fetchingC6BusSchedule">
       <span class="value">{{ c6busSchedule?.temps }}</span>
       <span class="label"
         >avant le prochain passage du <strong>C6</strong></span
       >
+    </div>
+    <div class="content" *ngIf="fetchingC6BusSchedule">
+      <span class="label">Chargement...</span>
     </div>
   </div>
 </div>
