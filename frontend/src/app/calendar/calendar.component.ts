@@ -3,7 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Calendar } from '@fullcalendar/core';
 import iCalendarPlugin from '@fullcalendar/icalendar';
 import timeGridPlugin from '@fullcalendar/timegrid';
-import { environment } from '../../environments/environment.development';
+import { environment } from '../../environments/environment';
 @Component({
   selector: 'app-calendar',
   standalone: true,
